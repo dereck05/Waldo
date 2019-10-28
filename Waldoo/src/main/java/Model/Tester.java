@@ -35,8 +35,8 @@ public class Tester {
     public void setOportunidades(int oportunidades) {
         this.oportunidades = oportunidades;
     }
-    public boolean isFamilyWaldo(String nombre){
-        switch(nombre){
+    public boolean isFamilyWaldo(String Nombre){
+        switch(Nombre){
             case "Waldo":
             case "Wenda":
             case "Woof":
