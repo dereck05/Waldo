@@ -18,9 +18,9 @@ import Model.ISuperFactoryWaldo;
 public class SuperFactoryWaldo implements ISuperFactoryWaldo{
 
     @Override
-    public void crearPersonaje(int x, int y, String nombre, String imagen) {
+    public void crearPersonaje(Double x, Double y, String nombre, String imagen) {
         ISuperFactory modelo = new SuperFactory(); 
-        Personaje  personaje=modelo.createPersonaje(Boolean.TRUE, nombre, imagen, 0, 0, 0, 0, 0,0,x,y,null);
+        Personaje  personaje=modelo.createPersonaje(Boolean.TRUE, nombre, imagen, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,x,y,null);
         ObjetoInformacion objeto = new ObjetoInformacion(null,null,personaje,"PrincipalesWaldo");
         modelo.guardarInformacion(objeto);
     }
@@ -32,13 +32,13 @@ public class SuperFactoryWaldo implements ISuperFactoryWaldo{
     }
 
     @Override
-    public Escenario crearEscenario(String key,String image) {
+    public Escenario crearEscenario(String key,String image,String fileNamePrincipales, String fileNameSecundarios) {
         Json json = new Json();
-        ArrayList<Personaje> personajesPrincipales = json.cargarJson("PrincipalesWaldo");    
+        ArrayList<Personaje> personajesPrincipales = json.cargarJson(fileNamePrincipales);    
         Escenario escenario= FlyweightEscenarioFactory.getEscenario(key);
         escenario.setImagen(image);
         if((FlyweightEscenarioFactory.escenarios.get(key).getPersonajes()).isEmpty()){
-               ArrayList<Personaje> personajesSecundarios = json.cargarJson("SecundariosWaldo");
+               ArrayList<Personaje> personajesSecundarios = json.cargarJson(fileNameSecundarios);
                escenario.setPersonajes(personajesSecundarios);           
                FlyweightEscenarioFactory.escenarios.replace(key, escenario);
                

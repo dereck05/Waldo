@@ -51,8 +51,8 @@ public class Escenario implements IContainer  {
         public void add(Escenario escenario) {
               for (Personaje personaje: escenario.getPersonajes()){
                    //El 20 es el ancho de la ventana
-                    personaje.setX((int) Math.floor(Math.random()*20));
-                    personaje.setY((int) Math.floor(Math.random()*20));
+                    personaje.setX((Double) Math.floor(Math.random()*20));
+                    personaje.setY((Double) Math.floor(Math.random()*20));
                     list.add(personaje);
               }
         }                                
