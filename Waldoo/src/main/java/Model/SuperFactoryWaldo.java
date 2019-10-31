@@ -5,11 +5,11 @@
  */
 package Model;
 
-import Model.Escenario;
+//import Model.Escenario;
 import Model.Personaje;
 import Model.SuperFactory;
 import java.util.ArrayList;
-import Model.ISuperFactoryWaldo;
+//import Model.ISuperFactoryWaldo;
 
 /**
  *

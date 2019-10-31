@@ -8,6 +8,7 @@ package Controller;
 import Model.FlyweightEscenarioFactory;
 import View.ViewFindWaldo;
 import java.awt.Button;
+import java.awt.Image;
 import java.awt.Panel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -63,12 +65,38 @@ public class ControllerFindWaldo implements ActionListener{
     }
     
     public void createImage(){
+        
+        vista.jPanel1.setLayout(null);
+        
         JLabel imagenAtaque = new JLabel();
-        imagenAtaque.setIcon(new javax.swing.ImageIcon(imagen));
+        ImageIcon icon = new javax.swing.ImageIcon(imagen);
+        
+        
+        
         imagenAtaque.setMaximumSize(new java.awt.Dimension(80,32767));
         imagenAtaque.setMinimumSize(new java.awt.Dimension(80,80));
         imagenAtaque.setPreferredSize(new java.awt.Dimension(80,80));
+        
+        //Tamaño de la imagen
+        imagenAtaque.setSize(80, 80);
+        
+        
+        //Escala la imagen al tamaño 
+        Image image= icon.getImage().getScaledInstance(imagenAtaque.getWidth(), imagenAtaque.getHeight(), Image.SCALE_SMOOTH);
+        
+        //Lo pasa de image a icon otra vez
+        icon = new ImageIcon(image, icon.getDescription());
+        //Le asigna el icon al label
+        imagenAtaque.setIcon(icon);
+        
+        //Pone las coordenadas
+        imagenAtaque.setLocation(600, 50); //Esto se debe hacer random entre 0 y width y 0 y height
         vista.jPanel1.add(imagenAtaque);
+        
+        //Refresca la ventana
+        vista.jPanel1.revalidate();
+        vista.jPanel1.repaint();
+        
     }
     
     public void agregarImagen() throws IOException{

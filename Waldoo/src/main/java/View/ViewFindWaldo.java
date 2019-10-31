@@ -56,7 +56,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
 
         jLabelCont.setText("0");
         jPanel1.add(jLabelCont);
-        jLabelCont.setBounds(680, 70, 51, 20);
+        jLabelCont.setBounds(680, 70, 51, 14);
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Clouds.png"))); // NOI18N
         jLabelFondo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -73,7 +73,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
 
         jButton2.setText("jButton2");
         jPanel1.add(jButton2);
-        jButton2.setBounds(430, 450, 93, 29);
+        jButton2.setBounds(430, 450, 73, 23);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
