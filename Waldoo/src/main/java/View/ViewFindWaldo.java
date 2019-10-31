@@ -5,12 +5,18 @@
  */
 package View;
 
+import java.awt.Color;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author naty9
  */
 public class ViewFindWaldo extends javax.swing.JFrame {
 
+    public static int clickCount = 0;
     /**
      * Creates new form FindWaldo
      */
@@ -28,15 +34,46 @@ public class ViewFindWaldo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabelCont = new javax.swing.JLabel();
+        jLabelFondo = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Clouds.png"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 780, 620);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/waldo.jpg"))); // NOI18N
+        jLabel2.setText("jLabelWaldo");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(40, 50, 270, 100);
+
+        jLabelCont.setText("0");
+        jPanel1.add(jLabelCont);
+        jLabelCont.setBounds(680, 70, 51, 20);
+
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Clouds.png"))); // NOI18N
+        jLabelFondo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelFondoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabelFondo);
+        jLabelFondo.setBounds(0, 0, 390, 200);
+
+        jButton1.setText("Agregar Imagen");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(410, 330, 180, 40);
+
+        jButton2.setText("jButton2");
+        jPanel1.add(jButton2);
+        jButton2.setBounds(430, 450, 93, 29);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -51,6 +88,24 @@ public class ViewFindWaldo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabelFondoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFondoMouseClicked
+        clickCount++;
+        System.out.print(Integer.toString(clickCount));
+        jLabelCont.setText(Integer.toString(clickCount));
+        
+    }//GEN-LAST:event_jLabelFondoMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        /*JPanel panelA = new JPanel();
+        panelA.setBackground(Color.red);
+        panelA.setMinimumSize(new java.awt.Dimension(80,100));
+        panelA.setPreferredSize(new java.awt.Dimension(80,100));
+        panelA.setLayout(new javax.swing.BoxLayout(panelA, javax.swing.BoxLayout.Y_AXIS));
+        System.out.println("Aqui"); */
+        
+        System.out.println("Bye");
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -89,7 +144,11 @@ public class ViewFindWaldo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JButton jButton1;
+    public javax.swing.JButton jButton2;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabelCont;
+    public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

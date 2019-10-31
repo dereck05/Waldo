@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -20,7 +20,7 @@ public class SuperFactoryWaldo implements ISuperFactoryWaldo{
     @Override
     public void crearPersonaje(Double x, Double y, String nombre, String imagen) {
         ISuperFactory modelo = new SuperFactory(); 
-        Personaje  personaje=modelo.createPersonaje(Boolean.TRUE, nombre, imagen, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,x,y,null);
+        Personaje personaje = modelo.createPersonaje(Boolean.TRUE, nombre, imagen, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,x,y,null);
         ObjetoInformacion objeto = new ObjetoInformacion(null,null,personaje,"PrincipalesWaldo");
         modelo.guardarInformacion(objeto);
     }
