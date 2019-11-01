@@ -17,6 +17,7 @@ import javax.swing.JPanel;
 public class ViewFindWaldo extends javax.swing.JFrame {
 
     public static int clickCount = 0;
+    public BackgroundPanel newPanel;
     /**
      * Creates new form FindWaldo
      */
@@ -112,6 +113,37 @@ public class ViewFindWaldo extends javax.swing.JFrame {
         System.out.println("Bye");
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    public void setFondo(String imagenFondo){
+        newPanel = new BackgroundPanel(imagenFondo);
+        
+        newPanel.setLayout(null);
+        newPanel.add(jLabel2);
+        newPanel.add(jLabelCont);
+        newPanel.add(jButton1);
+        newPanel.add(jButton2);
+        newPanel.add(jLabelFondo);
+        newPanel.add(jLabelWaldo);
+        
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(newPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(newPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+        );
+        pack();
+        
+        getContentPane().remove(jPanel1); //Solo sirve la primera vez
+        getContentPane().add(newPanel);
+        
+        
+        
+        validate();
+    }
     /**
      * @param args the command line arguments
      */

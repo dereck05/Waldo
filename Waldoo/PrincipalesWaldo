@@ -1,0 +1,44 @@
+[
+  {
+    "tipo": "",
+    "costo": 0.0,
+    "vida": 0.0,
+    "x": 10.0,
+    "imagen": "rosa.png",
+    "campoAccion": 0.0,
+    "y": 10.0,
+    "ataques": [],
+    "golpexTiempo": 0.0,
+    "nombre": "Waldo",
+    "nivel": 0.0,
+    "nivelAparicion": 0.0
+  },
+  {
+    "tipo": "",
+    "costo": 0.0,
+    "vida": 0.0,
+    "x": 10.0,
+    "imagen": "rosa.png",
+    "campoAccion": 0.0,
+    "y": 10.0,
+    "ataques": [],
+    "golpexTiempo": 0.0,
+    "nombre": "Waldo",
+    "nivel": 0.0,
+    "nivelAparicion": 0.0
+  },
+  {
+    "tipo": "",
+    "costo": 0.0,
+    "vida": 0.0,
+    "x": 10.0,
+    "imagen": "rosa.png",
+    "campoAccion": 0.0,
+    "y": 10.0,
+    "ataques": [],
+    "golpexTiempo": 0.0,
+    "nombre": "Waldo",
+    "nivel": 0.0,
+    "nivelAparicion": 0.0
+  }
+]

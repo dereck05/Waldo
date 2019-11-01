@@ -8,6 +8,7 @@ package Controller;
 import Model.FlyweightEscenarioFactory;
 import Model.Personaje;
 import Model.SuperFactoryWaldo;
+import View.BackgroundPanel;
 import View.ViewFindWaldo;
 import java.awt.Button;
 import java.awt.Image;
@@ -51,6 +52,40 @@ public class ControllerFindWaldo implements ActionListener{
         this.vista.jButton2.addActionListener(this);
         this.sfWaldo = pSfWaldo;
         
+        
+        
+        //BackgroundPanel newPanel = new BackgroundPanel();
+        vista.setFondo("src\\\\main\\\\resources\\\\Clouds.png");
+        
+        
+        /*newPanel.setLayout(null);
+        newPanel.add(vista.jLabel2);
+        newPanel.add(vista.jLabelCont);
+        newPanel.add(vista.jButton1);
+        newPanel.add(vista.jButton2);
+        newPanel.add(vista.jLabelFondo);
+        newPanel.add(vista.jLabelWaldo);
+        
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(vista.getContentPane());
+        
+        vista.getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(newPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(newPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+        );
+        vista.pack();
+        
+        vista.getContentPane().remove(vista.jPanel1);
+        vista.getContentPane().add(newPanel);
+        
+        
+        
+        vista.validate();*/
+        
     }
     
     
@@ -84,7 +119,7 @@ public class ControllerFindWaldo implements ActionListener{
     
     public void createImage(){
         
-        vista.jPanel1.setLayout(null);
+        vista.newPanel.setLayout(null);
         
         JLabel imagenAtaque = new JLabel();
         ImageIcon icon = new javax.swing.ImageIcon(imagen);
@@ -109,11 +144,11 @@ public class ControllerFindWaldo implements ActionListener{
         
         //Pone las coordenadas
         imagenAtaque.setLocation(600, 50); //Esto se debe hacer random entre 0 y width y 0 y height
-        vista.jPanel1.add(imagenAtaque);
+        vista.newPanel.add(imagenAtaque);
         
         //Refresca la ventana
-        vista.jPanel1.revalidate();
-        vista.jPanel1.repaint();
+        vista.newPanel.revalidate();
+        vista.newPanel.repaint();
         
     }
     
