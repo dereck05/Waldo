@@ -6,6 +6,8 @@
 package Controller;
 
 import Model.FlyweightEscenarioFactory;
+import Model.Personaje;
+import Model.SuperFactoryWaldo;
 import View.ViewFindWaldo;
 import java.awt.Button;
 import java.awt.Image;
@@ -35,25 +37,31 @@ import javax.swing.JOptionPane;
 public class ControllerFindWaldo implements ActionListener{
     public ViewFindWaldo vista;
     public FlyweightEscenarioFactory flyweight; 
+    public SuperFactoryWaldo sfWaldo;
     
     public static int clickCount = 0;
     public static int clickCount2 = 0;
     public static String imagen;
     
-    public ControllerFindWaldo(ViewFindWaldo pVista){
+    
+    public ControllerFindWaldo(ViewFindWaldo pVista, SuperFactoryWaldo pSfWaldo){
         this.vista = pVista;
         this.flyweight = flyweight;
         this.vista.jButton1.addActionListener(this);
         this.vista.jButton2.addActionListener(this);
+        this.sfWaldo = pSfWaldo;
+        
     }
     
     
     @Override
     public void actionPerformed(ActionEvent e) {
+        //inicio();
         String s = e.getActionCommand();
         if(e.getSource()==this.vista.jButton1){
             System.out.println("agregar imagen");
             try {
+                inicio();
                 agregarImagen();
             } catch (IOException ex) {
                 Logger.getLogger(ControladorVentanaAgregarAtaque.class.getName()).log(Level.SEVERE, null, ex);
@@ -62,6 +70,16 @@ public class ControllerFindWaldo implements ActionListener{
             System.out.println("crear");
             createImage();
         }
+    }
+    
+    public void inicio(){
+        Personaje pWaldo = sfWaldo.crearPersonaje(10.0, 10.0, "Waldo","rosa.png");
+        //Personaje pWenda = sfWaldo.crearPersonaje(40.0, 40.0, "Wenda","src\\main\\resources\\Imagenes\\bubbles.png");
+        //Personaje pWoof = sfWaldo.crearPersonaje(60.0, 60.0, "Woof","src\\main\\resources\\Imagenes\\gary.png");
+        //Personaje pOdlaw = sfWaldo.crearPersonaje(80.0, 80.0, "Odlaw","src\\main\\resources\\Imagenes\\elmo.png");    
+        //Personaje pBarbablanca = sfWaldo.crearPersonaje(100.0, 100.0, "Barbablanca","src\\main\\resources\\Imagenes\\panda.png");
+        
+        vista.jLabelWaldo.setIcon(new javax.swing.ImageIcon(pWaldo.getImage()));
     }
     
     public void createImage(){

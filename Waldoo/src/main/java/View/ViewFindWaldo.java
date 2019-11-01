@@ -36,9 +36,10 @@ public class ViewFindWaldo extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabelCont = new javax.swing.JLabel();
-        jLabelFondo = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
+        jLabelWaldo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,7 +57,15 @@ public class ViewFindWaldo extends javax.swing.JFrame {
 
         jLabelCont.setText("0");
         jPanel1.add(jLabelCont);
-        jLabelCont.setBounds(680, 70, 51, 14);
+        jLabelCont.setBounds(680, 70, 51, 20);
+
+        jButton1.setText("Agregar Imagen");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(410, 330, 180, 40);
+
+        jButton2.setText("jButton2");
+        jPanel1.add(jButton2);
+        jButton2.setBounds(430, 450, 93, 29);
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Clouds.png"))); // NOI18N
         jLabelFondo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -65,15 +74,11 @@ public class ViewFindWaldo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabelFondo);
-        jLabelFondo.setBounds(0, 0, 390, 200);
+        jLabelFondo.setBounds(0, 0, 330, 160);
 
-        jButton1.setText("Agregar Imagen");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(410, 330, 180, 40);
-
-        jButton2.setText("jButton2");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(430, 450, 73, 23);
+        jLabelWaldo.setText("jLabel1");
+        jPanel1.add(jLabelWaldo);
+        jLabelWaldo.setBounds(480, 150, 51, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,6 +154,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabelCont;
     public javax.swing.JLabel jLabelFondo;
+    public javax.swing.JLabel jLabelWaldo;
     public javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

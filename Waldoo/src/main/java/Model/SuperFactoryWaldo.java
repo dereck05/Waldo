@@ -6,8 +6,7 @@
 package Model;
 
 //import Model.Escenario;
-import Model.Personaje;
-import Model.SuperFactory;
+import Model.*;
 import java.util.ArrayList;
 //import Model.ISuperFactoryWaldo;
 
@@ -16,13 +15,15 @@ import java.util.ArrayList;
  * @author maryp
  */
 public class SuperFactoryWaldo implements ISuperFactoryWaldo{
-
+    
     @Override
-    public void crearPersonaje(Double x, Double y, String nombre, String imagen) {
+    public Personaje crearPersonaje(Double x, Double y, String nombre, String imagen) {
         ISuperFactory modelo = new SuperFactory(); 
         Personaje personaje = modelo.createPersonaje(Boolean.TRUE, nombre, imagen, 0.0, 0.0, 0.0, 0.0, 0.0,0.0,x,y,null);
+        System.out.println(personaje.getNombre());
         ObjetoInformacion objeto = new ObjetoInformacion(null,null,personaje,"PrincipalesWaldo");
         modelo.guardarInformacion(objeto);
+        return personaje; 
     }
 
     @Override

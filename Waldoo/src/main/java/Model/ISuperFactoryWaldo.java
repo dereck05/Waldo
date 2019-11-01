@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * @author maryp
  */
 public interface ISuperFactoryWaldo {
-    public void crearPersonaje(Double x, Double y, String nombre, String imagen);
+    public Personaje crearPersonaje(Double x, Double y, String nombre, String imagen);
     public Tester crearTester(Escenario escenario,int oportunidades);
     public Escenario crearEscenario(String key, String image,String fileNamePrincipales, String fileNameSecundarios);
 }
