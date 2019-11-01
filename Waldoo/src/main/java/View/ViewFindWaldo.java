@@ -25,7 +25,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
      */
     public ViewFindWaldo() {
         initComponents();
-        setFondo("src\\main\\resources\\Clouds.png");
+        //setFondo(imagenFondo);
     }
 
     /**
@@ -184,8 +184,8 @@ public class ViewFindWaldo extends javax.swing.JFrame {
         
         newPanel.setLayout(null);
         newPanel.add(jLabelCont);
-        newPanel.add(jButton1);
-        newPanel.add(jButton2);
+        //newPanel.add(jButton1);
+        //newPanel.add(jButton2);
         newPanel.add(jLabelWaldo);
         newPanel.add(jLabelWanda);
         newPanel.add(jLabelOdlaw);
@@ -249,6 +249,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
     
     public void cambiarFondo(String pathFondo){
         newPanel.cambiarFondo(pathFondo);
+        revalidate();
         repaint();
     }
     /**
@@ -288,8 +289,8 @@ public class ViewFindWaldo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabelBarbablanca;
     public javax.swing.JLabel jLabelCont;

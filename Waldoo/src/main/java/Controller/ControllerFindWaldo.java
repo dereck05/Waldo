@@ -22,6 +22,7 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
@@ -35,7 +36,7 @@ import javax.swing.JOptionPane;
  *
  * @author naty9
  */
-public class ControllerFindWaldo implements ActionListener{
+public class ControllerFindWaldo{
     public ViewFindWaldo vista;
     public FlyweightEscenarioFactory flyweight; 
     public SuperFactoryWaldo sfWaldo;
@@ -49,54 +50,32 @@ public class ControllerFindWaldo implements ActionListener{
     public static int clickOdlaw = 0;
     public static int clickBarbablanca = 0;
     
+    public static File dir = new File("src\\main\\resources\\Imagenes");
+    public static File[] files = dir.listFiles();
+
+    
+    public int cantPersonajesRandom = 0;
     
     public ControllerFindWaldo(ViewFindWaldo pVista, SuperFactoryWaldo pSfWaldo){
         this.vista = pVista;
         this.flyweight = flyweight;
-        this.vista.jButton1.addActionListener(this);
-        this.vista.jButton2.addActionListener(this);
+        //this.vista.jButton1.addActionListener(this);
+        //this.vista.jButton2.addActionListener(this);
         this.sfWaldo = pSfWaldo;
         
         inicio();
-   
-        //Setear el fondo
-        //vista.setFondo("src\\\\main\\\\resources\\\\Clouds.png");
-        
-        /*newPanel.setLayout(null);
-        newPanel.add(vista.jLabel2);
-        newPanel.add(vista.jLabelCont);
-        newPanel.add(vista.jButton1);
-        newPanel.add(vista.jButton2);
-        newPanel.add(vista.jLabelFondo);
-        newPanel.add(vista.jLabelWaldo);
-        
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(vista.getContentPane());
-        
-        vista.getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(newPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(newPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
-        );
-        vista.pack();
-        
-        vista.getContentPane().remove(vista.jPanel1);
-        vista.getContentPane().add(newPanel);
-        
-        vista.validate();*/
         
     }
     
+    public void setCantPersonajesExtra(int cantidad){
+        cantPersonajesRandom = cantidad;
+    }
     
-    
-    @Override
+    /*@Override
     public void actionPerformed(ActionEvent e) {
-        /*if(clickWaldo > 0 && clickWanda > 0 && clickWoof > 0 && clickOdlaw > 0 && clickBarbablanca > 0){
-            JOptionPane.showMessageDialog(vista, "Felicidades ha ganado!");
-        }*/
+        //if(clickWaldo > 0 && clickWanda > 0 && clickWoof > 0 && clickOdlaw > 0 && clickBarbablanca > 0){
+          //  JOptionPane.showMessageDialog(vista, "Felicidades ha ganado!");
+        //}
         //inicio();
         String s = e.getActionCommand();
         if(e.getSource()==this.vista.jButton1){
@@ -111,7 +90,7 @@ public class ControllerFindWaldo implements ActionListener{
             System.out.println("crear");
             createImage();
         }
-    }
+    }*/
     
     public void inicio(){
         Personaje pWaldo = sfWaldo.crearPersonaje(10.0, 10.0, "Waldo","src\\main\\resources\\Imagenes\\waldo.png");
@@ -133,6 +112,36 @@ public class ControllerFindWaldo implements ActionListener{
         vista.jLabelWoof.setSize(100, 50);
         vista.jLabelOdlaw.setSize(100, 120);
         vista.jLabelBarbablanca.setSize(100, 120);
+        
+        Random r = new Random();
+        
+        vista.jLabelWaldo.setLocation(Math.abs(r.nextInt()) % vista.newPanel.getWidth()-80, Math.abs(r.nextInt()) % vista.newPanel.getHeight()-80);
+        vista.jLabelWanda.setLocation(Math.abs(r.nextInt()) % vista.newPanel.getWidth()-80, Math.abs(r.nextInt()) % vista.newPanel.getHeight()-80);
+        vista.jLabelWoof.setLocation(Math.abs(r.nextInt()) % vista.newPanel.getWidth()-80, Math.abs(r.nextInt()) % vista.newPanel.getHeight()-80);
+        vista.jLabelOdlaw.setLocation(Math.abs(r.nextInt()) % vista.newPanel.getWidth()-80, Math.abs(r.nextInt()) % vista.newPanel.getHeight()-80);
+        vista.jLabelBarbablanca.setLocation(Math.abs(r.nextInt()) % vista.newPanel.getWidth()-80, Math.abs(r.nextInt()) % vista.newPanel.getHeight()-80);
+        
+        for(int i = 0; i < cantPersonajesRandom ; i++){
+            System.out.println("i");
+            
+            int index = Math.abs(r.nextInt(files.length-1));
+            ImageIcon imgI = new javax.swing.ImageIcon(files[index].getAbsolutePath());
+            JLabel lbl = new JLabel();
+            lbl.setSize(90,150);
+            
+            
+            Image img = imgI.getImage().getScaledInstance(lbl.getWidth(), lbl.getHeight(), Image.SCALE_SMOOTH);
+            imgI = new ImageIcon(img, imgWaldo.getDescription());
+            lbl.setIcon(imgI);
+            
+            
+            lbl.setLocation(Math.abs(r.nextInt()) % vista.newPanel.getWidth()-80, Math.abs(r.nextInt()) % vista.newPanel.getHeight()-80);
+            
+            
+            vista.newPanel.add(lbl);
+            
+            
+        }
         
         
         Image scaledWaldo = imgWaldo.getImage().getScaledInstance(vista.jLabelWaldo.getWidth(), vista.jLabelWaldo.getHeight(), Image.SCALE_SMOOTH);

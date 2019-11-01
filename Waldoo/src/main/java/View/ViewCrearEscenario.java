@@ -5,6 +5,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author naty9
@@ -102,6 +104,10 @@ public class ViewCrearEscenario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    public void avisarOpcionInvalida(){
+        JOptionPane.showMessageDialog(this, "Opción no registrada");
+    }
+    
     /**
      * @param args the command line arguments
      */

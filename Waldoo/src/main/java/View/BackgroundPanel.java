@@ -32,7 +32,7 @@ public class BackgroundPanel extends javax.swing.JPanel{
     
     public void cambiarFondo(String path){
         setImagePath(path);
-        this.revalidate();
+        //this.revalidate();
     }
     
     @Override

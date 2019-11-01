@@ -8,6 +8,7 @@ package Controller;
 //import View.Menu;
 
 import Model.SuperFactoryWaldo;
+import View.ViewCrearEscenario;
 import View.ViewFindWaldo;
 import javax.swing.JFrame;
 
@@ -18,8 +19,8 @@ import javax.swing.JFrame;
 public class Main {
     public static void main(String args[]){
         SuperFactoryWaldo sf = new SuperFactoryWaldo();
-        ViewFindWaldo vista = new ViewFindWaldo();
-        ControllerFindWaldo c = new ControllerFindWaldo(vista,sf);
+        ViewCrearEscenario vista = new ViewCrearEscenario();
+        ControllerCrearEscenario c = new ControllerCrearEscenario(vista,sf);
         c.vista.setVisible(true);
         c.vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
