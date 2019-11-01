@@ -56,9 +56,11 @@ public class ControllerFindWaldo implements ActionListener{
         this.vista.jButton1.addActionListener(this);
         this.vista.jButton2.addActionListener(this);
         this.sfWaldo = pSfWaldo;
+        
+        inicio();
    
         //Setear el fondo
-        vista.setFondo("src\\\\main\\\\resources\\\\Clouds.png");
+        //vista.setFondo("src\\\\main\\\\resources\\\\Clouds.png");
         
         /*newPanel.setLayout(null);
         newPanel.add(vista.jLabel2);
@@ -88,17 +90,19 @@ public class ControllerFindWaldo implements ActionListener{
         
     }
     
+    
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(clickWaldo > 0 && clickWanda > 0 && clickWoof > 0 && clickOdlaw > 0 && clickBarbablanca > 0){
+        /*if(clickWaldo > 0 && clickWanda > 0 && clickWoof > 0 && clickOdlaw > 0 && clickBarbablanca > 0){
             JOptionPane.showMessageDialog(vista, "Felicidades ha ganado!");
-        }
+        }*/
         //inicio();
         String s = e.getActionCommand();
         if(e.getSource()==this.vista.jButton1){
             System.out.println("agregar imagen");
             try {
-                inicio();
+                //inicio();
                 agregarImagen();
             } catch (IOException ex) {
                 Logger.getLogger(ControladorVentanaAgregarAtaque.class.getName()).log(Level.SEVERE, null, ex);
@@ -116,11 +120,46 @@ public class ControllerFindWaldo implements ActionListener{
         Personaje pOdlaw = sfWaldo.crearPersonaje(80.0, 80.0, "Odlaw","src\\main\\resources\\Imagenes\\odlaw.png");    
         Personaje pBarbablanca = sfWaldo.crearPersonaje(100.0, 100.0, "Barbablanca","src\\main\\resources\\Imagenes\\whitebeard.png");
         
-        vista.jLabelWaldo.setIcon(new javax.swing.ImageIcon(pWaldo.getImage()));
-        vista.jLabelWanda.setIcon(new javax.swing.ImageIcon(pWenda.getImage()));
-        vista.jLabelWoof.setIcon(new javax.swing.ImageIcon(pWoof.getImage()));
-        vista.jLabelOdlaw.setIcon(new javax.swing.ImageIcon(pWoof.getImage()));
-        vista.jLabelBarbablanca.setIcon(new javax.swing.ImageIcon(pWoof.getImage()));
+        
+        //Escalar
+        ImageIcon imgWaldo = new javax.swing.ImageIcon(pWaldo.getImage());
+        ImageIcon imgWenda = new javax.swing.ImageIcon(pWenda.getImage());
+        ImageIcon imgWoof = new javax.swing.ImageIcon(pWoof.getImage());
+        ImageIcon imgOdlaw = new javax.swing.ImageIcon(pOdlaw.getImage());
+        ImageIcon imgBarbablanca = new javax.swing.ImageIcon(pBarbablanca.getImage());
+        
+        vista.jLabelWaldo.setSize(100, 120);
+        vista.jLabelWanda.setSize(60, 100);
+        vista.jLabelWoof.setSize(100, 50);
+        vista.jLabelOdlaw.setSize(100, 120);
+        vista.jLabelBarbablanca.setSize(100, 120);
+        
+        
+        Image scaledWaldo = imgWaldo.getImage().getScaledInstance(vista.jLabelWaldo.getWidth(), vista.jLabelWaldo.getHeight(), Image.SCALE_SMOOTH);
+        imgWaldo = new ImageIcon(scaledWaldo, imgWaldo.getDescription());
+        
+        Image scaledWenda = imgWenda.getImage().getScaledInstance(vista.jLabelWanda.getWidth(), vista.jLabelWanda.getHeight(), Image.SCALE_SMOOTH);
+        imgWenda = new ImageIcon(scaledWenda, imgWenda.getDescription());
+        
+        Image scaledWoof = imgWoof.getImage().getScaledInstance(vista.jLabelWoof.getWidth(), vista.jLabelWoof.getHeight(), Image.SCALE_SMOOTH);
+        imgWoof = new ImageIcon(scaledWoof, imgWoof.getDescription());
+        
+        Image scaledOdlaw = imgOdlaw.getImage().getScaledInstance(vista.jLabelOdlaw.getWidth(), vista.jLabelOdlaw.getHeight(), Image.SCALE_SMOOTH);
+        imgOdlaw = new ImageIcon(scaledOdlaw, imgOdlaw.getDescription());
+        
+        Image scaledBarbablanca = imgBarbablanca.getImage().getScaledInstance(vista.jLabelBarbablanca.getWidth(), vista.jLabelBarbablanca.getHeight(), Image.SCALE_SMOOTH);
+        imgBarbablanca = new ImageIcon(scaledBarbablanca, imgBarbablanca.getDescription());
+        
+        vista.jLabelWaldo.setIcon(imgWaldo);
+        vista.jLabelWanda.setIcon(imgWenda);
+        vista.jLabelWoof.setIcon(imgWoof);   
+        vista.jLabelOdlaw.setIcon(imgOdlaw);
+        vista.jLabelBarbablanca.setIcon(imgBarbablanca);
+        
+        
+        
+        vista.revalidate();
+        vista.repaint();
     }
     
     public void createImage(){

@@ -9,6 +9,7 @@ import static Controller.ControllerFindWaldo.*;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -24,6 +25,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
      */
     public ViewFindWaldo() {
         initComponents();
+        setFondo("src\\main\\resources\\Clouds.png");
     }
 
     /**
@@ -36,11 +38,9 @@ public class ViewFindWaldo extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabelCont = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabelFondo = new javax.swing.JLabel();
         jLabelWanda = new javax.swing.JLabel();
         jLabelWoof = new javax.swing.JLabel();
         jLabelOdlaw = new javax.swing.JLabel();
@@ -51,36 +51,22 @@ public class ViewFindWaldo extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/waldo.jpg"))); // NOI18N
-        jLabel2.setText("jLabelWaldo");
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(40, 50, 270, 100);
-
         jLabelCont.setText("0");
         jPanel1.add(jLabelCont);
-        jLabelCont.setBounds(680, 70, 51, 20);
+        jLabelCont.setBounds(680, 70, 51, 14);
 
         jButton1.setText("Agregar Imagen");
         jPanel1.add(jButton1);
         jButton1.setBounds(410, 330, 180, 40);
 
         jButton2.setText("jButton2");
-        jPanel1.add(jButton2);
-        jButton2.setBounds(430, 450, 93, 29);
-
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Clouds.png"))); // NOI18N
-        jLabelFondo.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelFondoMouseClicked(evt);
+                jButton2MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabelFondo);
-        jLabelFondo.setBounds(0, 0, 330, 160);
+        jPanel1.add(jButton2);
+        jButton2.setBounds(430, 450, 73, 23);
 
         jLabelWanda.setText("jLabel1");
         jLabelWanda.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -89,7 +75,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabelWanda);
-        jLabelWanda.setBounds(670, 220, 51, 20);
+        jLabelWanda.setBounds(670, 220, 34, 14);
 
         jLabelWoof.setText("jLabel1");
         jLabelWoof.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,7 +84,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabelWoof);
-        jLabelWoof.setBounds(250, 200, 51, 20);
+        jLabelWoof.setBounds(250, 200, 34, 14);
 
         jLabelOdlaw.setText("jLabel1");
         jLabelOdlaw.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -107,7 +93,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabelOdlaw);
-        jLabelOdlaw.setBounds(80, 340, 51, 20);
+        jLabelOdlaw.setBounds(80, 340, 34, 14);
 
         jLabelBarbablanca.setText("jLabel1");
         jLabelBarbablanca.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,7 +102,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabelBarbablanca);
-        jLabelBarbablanca.setBounds(660, 380, 51, 20);
+        jLabelBarbablanca.setBounds(660, 380, 34, 14);
 
         jLabelWaldo.setText("jLabel1");
         jLabelWaldo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -125,7 +111,7 @@ public class ViewFindWaldo extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabelWaldo);
-        jLabelWaldo.setBounds(480, 150, 51, 20);
+        jLabelWaldo.setBounds(480, 150, 34, 14);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,60 +127,70 @@ public class ViewFindWaldo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabelFondoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelFondoMouseClicked
-        clickCount++;
-        System.out.print("Otro: " + Integer.toString(clickCount));
-        //jLabelCont.setText(Integer.toString(clickCount));
-        
-    }//GEN-LAST:event_jLabelFondoMouseClicked
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        /*JPanel panelA = new JPanel();
-        panelA.setBackground(Color.red);
-        panelA.setMinimumSize(new java.awt.Dimension(80,100));
-        panelA.setPreferredSize(new java.awt.Dimension(80,100));
-        panelA.setLayout(new javax.swing.BoxLayout(panelA, javax.swing.BoxLayout.Y_AXIS));
-        System.out.println("Aqui"); */
-        
-        System.out.println("Bye");
-    }//GEN-LAST:event_jLabel2MouseClicked
-
     private void jLabelWandaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelWandaMouseClicked
         clickWanda++;
         System.out.println("Wenda:" + Integer.toString(clickWanda));
+        checkWin();
     }//GEN-LAST:event_jLabelWandaMouseClicked
 
     private void jLabelBarbablancaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelBarbablancaMouseClicked
         clickBarbablanca++;
         System.out.println("Barbablanca:" + Integer.toString(clickBarbablanca));
+        checkWin();
     }//GEN-LAST:event_jLabelBarbablancaMouseClicked
 
     private void jLabelWoofMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelWoofMouseClicked
         clickWoof++;
         System.out.println("Woof:" + Integer.toString(clickWoof));
+        checkWin();
     }//GEN-LAST:event_jLabelWoofMouseClicked
 
     private void jLabelOdlawMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelOdlawMouseClicked
         clickOdlaw++;
         System.out.println("Odlaw:" + Integer.toString(clickOdlaw));
+        checkWin();
     }//GEN-LAST:event_jLabelOdlawMouseClicked
 
     private void jLabelWaldoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelWaldoMouseClicked
-        clickCount++;
-        System.out.print("Waldo: " + Integer.toString(clickCount));
-        jLabelCont.setText(Integer.toString(clickCount));
+        clickWaldo++;
+        System.out.print("Waldo: " + Integer.toString(clickWaldo));
+        checkWin();
     }//GEN-LAST:event_jLabelWaldoMouseClicked
 
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void newPanelMouseClicked(java.awt.event.MouseEvent evt){
+        
+        clickCount++;
+        System.out.print("Otro: " + Integer.toString(clickCount));
+        jLabelCont.setText(Integer.toString(clickCount));
+        checkWin();
+
+        
+    }
+    
     public void setFondo(String imagenFondo){
+        
+        jLabelWaldo.setText("");
+        jLabelWanda.setText("");
+        jLabelWoof.setText("");
+        jLabelOdlaw.setText("");
+        jLabelBarbablanca.setText("");
+        
         newPanel = new BackgroundPanel(imagenFondo);
         
         newPanel.setLayout(null);
-        newPanel.add(jLabel2);
         newPanel.add(jLabelCont);
         newPanel.add(jButton1);
         newPanel.add(jButton2);
-        newPanel.add(jLabelFondo);
         newPanel.add(jLabelWaldo);
+        newPanel.add(jLabelWanda);
+        newPanel.add(jLabelOdlaw);
+        newPanel.add(jLabelWoof);
+        newPanel.add(jLabelBarbablanca);
         
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         
@@ -207,6 +203,14 @@ public class ViewFindWaldo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(newPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
         );
+        
+        newPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                newPanelMouseClicked(evt);
+            }
+        });
+        
+        
         pack();
         
         getContentPane().remove(jPanel1); //Solo sirve la primera vez
@@ -215,6 +219,37 @@ public class ViewFindWaldo extends javax.swing.JFrame {
         
         
         validate();
+    }
+    
+    
+    public void checkWin(){
+        if(clickWaldo > 0 && clickWanda > 0 && clickWoof > 0 && clickOdlaw > 0 && clickBarbablanca > 0){
+            JOptionPane.showMessageDialog(this, "Felicidades ha ganado!");
+            clickCount = 0;
+            clickWaldo = 0;
+            clickWanda = 0;
+            clickWoof = 0;
+            clickOdlaw = 0;
+            clickBarbablanca = 0;
+            jLabelCont.setText(Integer.toString(clickCount));
+        } else { 
+            //Perdio
+            if(clickCount > 15){
+                JOptionPane.showMessageDialog(this, "Lo sentimos, ha excedido los intentos posibles.");
+                clickCount = 0;
+                clickWaldo = 0;
+                clickWanda = 0;
+                clickWoof = 0;
+                clickOdlaw = 0;
+                clickBarbablanca = 0;
+                jLabelCont.setText(Integer.toString(clickCount));
+            }
+        }
+    }
+    
+    public void cambiarFondo(String pathFondo){
+        newPanel.cambiarFondo(pathFondo);
+        repaint();
     }
     /**
      * @param args the command line arguments

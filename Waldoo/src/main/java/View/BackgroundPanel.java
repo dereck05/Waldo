@@ -22,6 +22,19 @@ public class BackgroundPanel extends javax.swing.JPanel{
         this.imagePath = imagePath;
     }
     
+    public void setImagePath(String path){
+        imagePath = path;
+    }
+    
+    public String getImagePath(){
+        return imagePath;
+    }
+    
+    public void cambiarFondo(String path){
+        setImagePath(path);
+        this.revalidate();
+    }
+    
     @Override
     protected void paintComponent(Graphics g) {
         
