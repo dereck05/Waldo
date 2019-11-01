@@ -79,7 +79,7 @@ public class ControllerCrearEscenario implements ActionListener{
     }
     
     public void crearJuego(){
-        String cantPersonajes = vista.jTextField1.getText().toString(); 
+        int cantPersonajes = Integer.parseInt(vista.jTextField1.getText().toString()); 
         byte[] array = new byte[7]; 
         new Random().nextBytes(array);
         String randomKey = new String(array, Charset.forName("UTF-8"));
@@ -89,8 +89,8 @@ public class ControllerCrearEscenario implements ActionListener{
         
         ViewFindWaldo ventana = new ViewFindWaldo();
         ventana.setFondo(pathEscenario);
-        ControllerFindWaldo c = new ControllerFindWaldo(ventana,sfWaldo);
-        c.setCantPersonajesExtra(Integer.parseInt(cantPersonajes));
+        ControllerFindWaldo c = new ControllerFindWaldo(ventana,sfWaldo,cantPersonajes);
+        //c.setCantPersonajesExtra(Integer.parseInt(cantPersonajes));
         ventana.setVisible(true);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         vista.setVisible(false);

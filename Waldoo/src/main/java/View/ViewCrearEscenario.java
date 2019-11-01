@@ -82,7 +82,7 @@ public class ViewCrearEscenario extends javax.swing.JFrame {
         jBtnCargarEscenario.setText("Cargar Escenario");
         jBtnCargarEscenario.setActionCommand("");
         jPanel1.add(jBtnCargarEscenario);
-        jBtnCargarEscenario.setBounds(520, 300, 227, 40);
+        jBtnCargarEscenario.setBounds(490, 300, 270, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,7 +105,7 @@ public class ViewCrearEscenario extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     public void avisarOpcionInvalida(){
-        JOptionPane.showMessageDialog(this, "Opción no registrada");
+        JOptionPane.showMessageDialog(this, "OpciÃ³n no registrada");
     }
     
     /**

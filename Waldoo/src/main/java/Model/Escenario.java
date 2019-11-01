@@ -68,7 +68,7 @@ public class Escenario implements IContainer  {
         @Override                    
         public Personaje next() {                        
             if (!hasNext()) {                            
-                throw new RuntimeException("No hay más elementos");                        
+                throw new RuntimeException("No hay mÃ¡s elementos");                        
             }
             return list.get(index++);                    
         }                

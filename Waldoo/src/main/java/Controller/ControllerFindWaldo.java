@@ -56,12 +56,11 @@ public class ControllerFindWaldo{
     
     public int cantPersonajesRandom = 0;
     
-    public ControllerFindWaldo(ViewFindWaldo pVista, SuperFactoryWaldo pSfWaldo){
+    public ControllerFindWaldo(ViewFindWaldo pVista, SuperFactoryWaldo pSfWaldo, int cantPersonajes){
         this.vista = pVista;
         this.flyweight = flyweight;
-        //this.vista.jButton1.addActionListener(this);
-        //this.vista.jButton2.addActionListener(this);
         this.sfWaldo = pSfWaldo;
+        this.cantPersonajesRandom = cantPersonajes;
         
         inicio();
         
@@ -70,34 +69,13 @@ public class ControllerFindWaldo{
     public void setCantPersonajesExtra(int cantidad){
         cantPersonajesRandom = cantidad;
     }
-    
-    /*@Override
-    public void actionPerformed(ActionEvent e) {
-        //if(clickWaldo > 0 && clickWanda > 0 && clickWoof > 0 && clickOdlaw > 0 && clickBarbablanca > 0){
-          //  JOptionPane.showMessageDialog(vista, "Felicidades ha ganado!");
-        //}
-        //inicio();
-        String s = e.getActionCommand();
-        if(e.getSource()==this.vista.jButton1){
-            System.out.println("agregar imagen");
-            try {
-                //inicio();
-                agregarImagen();
-            } catch (IOException ex) {
-                Logger.getLogger(ControladorVentanaAgregarAtaque.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else if(e.getSource()==this.vista.jButton2){
-            System.out.println("crear");
-            createImage();
-        }
-    }*/
-    
+
     public void inicio(){
-        Personaje pWaldo = sfWaldo.crearPersonaje(10.0, 10.0, "Waldo","src\\main\\resources\\Imagenes\\waldo.png");
-        Personaje pWenda = sfWaldo.crearPersonaje(40.0, 40.0, "Wenda","src\\main\\resources\\Imagenes\\wenda.png");
-        Personaje pWoof = sfWaldo.crearPersonaje(60.0, 60.0, "Woof","src\\main\\resources\\Imagenes\\woof.png");
-        Personaje pOdlaw = sfWaldo.crearPersonaje(80.0, 80.0, "Odlaw","src\\main\\resources\\Imagenes\\odlaw.png");    
-        Personaje pBarbablanca = sfWaldo.crearPersonaje(100.0, 100.0, "Barbablanca","src\\main\\resources\\Imagenes\\whitebeard.png");
+        Personaje pWaldo = sfWaldo.crearPersonaje(10.0, 10.0, "Waldo","src\\main\\resources\\Principales\\waldo.png");
+        Personaje pWenda = sfWaldo.crearPersonaje(40.0, 40.0, "Wenda","src\\main\\resources\\Principales\\wenda.png");
+        Personaje pWoof = sfWaldo.crearPersonaje(60.0, 60.0, "Woof","src\\main\\resources\\Principales\\woof.png");
+        Personaje pOdlaw = sfWaldo.crearPersonaje(80.0, 80.0, "Odlaw","src\\main\\resources\\Principales\\odlaw.png");    
+        Personaje pBarbablanca = sfWaldo.crearPersonaje(100.0, 100.0, "Barbablanca","src\\main\\resources\\Principales\\whitebeard.png");
         
         
         //Escalar
@@ -121,6 +99,8 @@ public class ControllerFindWaldo{
         vista.jLabelOdlaw.setLocation(Math.abs(r.nextInt()) % vista.newPanel.getWidth()-80, Math.abs(r.nextInt()) % vista.newPanel.getHeight()-80);
         vista.jLabelBarbablanca.setLocation(Math.abs(r.nextInt()) % vista.newPanel.getWidth()-80, Math.abs(r.nextInt()) % vista.newPanel.getHeight()-80);
         
+        System.out.println(cantPersonajesRandom);
+        //cantPersonajesRandom = 20;
         for(int i = 0; i < cantPersonajesRandom ; i++){
             System.out.println("i");
             
@@ -218,22 +198,5 @@ public class ControllerFindWaldo{
             String path = "src\\main\\resources\\Imagenes\\"+fileToSave.getName();
              this.imagen = path;      
         }
-    }
-    
-    
-   /* public void iniciar(){
-        vista.jLabelFondo.addMouseListener(new MouseAdapter(){
-            public void jLabelFondoMouseClicked(MouseEvent e) {
-                clickPrueba++;
-                vista.jLabelCont.setText(Integer.toString(clickPrueba));
-                System.out.println("Prueba:" + Integer.toString(clickPrueba));
-                //lblPanel.setText(Integer.toString(clickCount));
-            }
-        }); 
-
-        
-    }*/
-
-    
-    
+    } 
 }
