@@ -40,9 +40,14 @@ public class ControllerFindWaldo implements ActionListener{
     public FlyweightEscenarioFactory flyweight; 
     public SuperFactoryWaldo sfWaldo;
     
-    public static int clickCount = 0;
-    public static int clickCount2 = 0;
     public static String imagen;
+    
+    public static int clickCount = 0;
+    public static int clickWaldo = 0;
+    public static int clickWanda = 0;
+    public static int clickWoof = 0;
+    public static int clickOdlaw = 0;
+    public static int clickBarbablanca = 0;
     
     
     public ControllerFindWaldo(ViewFindWaldo pVista, SuperFactoryWaldo pSfWaldo){
@@ -51,12 +56,9 @@ public class ControllerFindWaldo implements ActionListener{
         this.vista.jButton1.addActionListener(this);
         this.vista.jButton2.addActionListener(this);
         this.sfWaldo = pSfWaldo;
-        
-        
-        
+   
         //BackgroundPanel newPanel = new BackgroundPanel();
         vista.setFondo("src\\\\main\\\\resources\\\\Clouds.png");
-        
         
         /*newPanel.setLayout(null);
         newPanel.add(vista.jLabel2);
@@ -82,15 +84,15 @@ public class ControllerFindWaldo implements ActionListener{
         vista.getContentPane().remove(vista.jPanel1);
         vista.getContentPane().add(newPanel);
         
-        
-        
         vista.validate();*/
         
     }
     
-    
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(clickWaldo > 0 && clickWanda > 0 && clickWoof > 0 && clickOdlaw > 0 && clickBarbablanca > 0){
+            JOptionPane.showMessageDialog(vista, "Felicidades ha ganado!");
+        }
         //inicio();
         String s = e.getActionCommand();
         if(e.getSource()==this.vista.jButton1){
@@ -108,13 +110,17 @@ public class ControllerFindWaldo implements ActionListener{
     }
     
     public void inicio(){
-        Personaje pWaldo = sfWaldo.crearPersonaje(10.0, 10.0, "Waldo","rosa.png");
-        //Personaje pWenda = sfWaldo.crearPersonaje(40.0, 40.0, "Wenda","src\\main\\resources\\Imagenes\\bubbles.png");
-        //Personaje pWoof = sfWaldo.crearPersonaje(60.0, 60.0, "Woof","src\\main\\resources\\Imagenes\\gary.png");
-        //Personaje pOdlaw = sfWaldo.crearPersonaje(80.0, 80.0, "Odlaw","src\\main\\resources\\Imagenes\\elmo.png");    
-        //Personaje pBarbablanca = sfWaldo.crearPersonaje(100.0, 100.0, "Barbablanca","src\\main\\resources\\Imagenes\\panda.png");
+        Personaje pWaldo = sfWaldo.crearPersonaje(10.0, 10.0, "Waldo","src\\main\\resources\\Imagenes\\waldo.png");
+        Personaje pWenda = sfWaldo.crearPersonaje(40.0, 40.0, "Wenda","src\\main\\resources\\Imagenes\\wenda.png");
+        Personaje pWoof = sfWaldo.crearPersonaje(60.0, 60.0, "Woof","src\\main\\resources\\Imagenes\\woof.png");
+        Personaje pOdlaw = sfWaldo.crearPersonaje(80.0, 80.0, "Odlaw","src\\main\\resources\\Imagenes\\odlaw.png");    
+        Personaje pBarbablanca = sfWaldo.crearPersonaje(100.0, 100.0, "Barbablanca","src\\main\\resources\\Imagenes\\whitebear.png");
         
         vista.jLabelWaldo.setIcon(new javax.swing.ImageIcon(pWaldo.getImage()));
+        vista.jLabelWanda.setIcon(new javax.swing.ImageIcon(pWenda.getImage()));
+        vista.jLabelWoof.setIcon(new javax.swing.ImageIcon(pWoof.getImage()));
+        vista.jLabelOdlaw.setIcon(new javax.swing.ImageIcon(pWoof.getImage()));
+        vista.jLabelBarbablanca.setIcon(new javax.swing.ImageIcon(pWoof.getImage()));
     }
     
     public void createImage(){
@@ -123,8 +129,6 @@ public class ControllerFindWaldo implements ActionListener{
         
         JLabel imagenAtaque = new JLabel();
         ImageIcon icon = new javax.swing.ImageIcon(imagen);
-        
-        
         
         imagenAtaque.setMaximumSize(new java.awt.Dimension(80,32767));
         imagenAtaque.setMinimumSize(new java.awt.Dimension(80,80));
@@ -169,19 +173,18 @@ public class ControllerFindWaldo implements ActionListener{
     }
     
     
-    public void iniciar(){
+   /* public void iniciar(){
         vista.jLabelFondo.addMouseListener(new MouseAdapter(){
             public void jLabelFondoMouseClicked(MouseEvent e) {
-                clickCount++;
-                vista.jLabelCont.setText(Integer.toString(clickCount));
-                System.out.println(Integer.toString(clickCount));
+                clickPrueba++;
+                vista.jLabelCont.setText(Integer.toString(clickPrueba));
+                System.out.println("Prueba:" + Integer.toString(clickPrueba));
                 //lblPanel.setText(Integer.toString(clickCount));
             }
         }); 
+
         
-        
-        
-    }
+    }*/
 
     
     
