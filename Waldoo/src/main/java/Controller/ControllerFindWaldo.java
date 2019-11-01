@@ -57,7 +57,7 @@ public class ControllerFindWaldo implements ActionListener{
         this.vista.jButton2.addActionListener(this);
         this.sfWaldo = pSfWaldo;
    
-        //BackgroundPanel newPanel = new BackgroundPanel();
+        //Setear el fondo
         vista.setFondo("src\\\\main\\\\resources\\\\Clouds.png");
         
         /*newPanel.setLayout(null);
@@ -114,7 +114,7 @@ public class ControllerFindWaldo implements ActionListener{
         Personaje pWenda = sfWaldo.crearPersonaje(40.0, 40.0, "Wenda","src\\main\\resources\\Imagenes\\wenda.png");
         Personaje pWoof = sfWaldo.crearPersonaje(60.0, 60.0, "Woof","src\\main\\resources\\Imagenes\\woof.png");
         Personaje pOdlaw = sfWaldo.crearPersonaje(80.0, 80.0, "Odlaw","src\\main\\resources\\Imagenes\\odlaw.png");    
-        Personaje pBarbablanca = sfWaldo.crearPersonaje(100.0, 100.0, "Barbablanca","src\\main\\resources\\Imagenes\\whitebear.png");
+        Personaje pBarbablanca = sfWaldo.crearPersonaje(100.0, 100.0, "Barbablanca","src\\main\\resources\\Imagenes\\whitebeard.png");
         
         vista.jLabelWaldo.setIcon(new javax.swing.ImageIcon(pWaldo.getImage()));
         vista.jLabelWanda.setIcon(new javax.swing.ImageIcon(pWenda.getImage()));
@@ -166,8 +166,8 @@ public class ControllerFindWaldo implements ActionListener{
             //System.out.println(fileToSave.getAbsolutePath());
             File file  = new File(fileToSave.getAbsolutePath());
             BufferedImage bi = ImageIO.read(file);
-            ImageIO.write(bi, "png", new File("src\\main\\resources\\Imagenes"+fileToSave.getName()));
-            String path = "src\\main\\resources\\Imagenes"+fileToSave.getName();
+            ImageIO.write(bi, "png", new File("src\\main\\resources\\Imagenes\\"+fileToSave.getName()));
+            String path = "src\\main\\resources\\Imagenes\\"+fileToSave.getName();
              this.imagen = path;      
         }
     }
